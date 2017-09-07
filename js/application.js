@@ -1,5 +1,6 @@
 var transform = function(input){
-  return(input);
+  // return(input);
+  return(model.convertToMarkdown(input));
 };
 
 $(document).ready(function() {
@@ -8,6 +9,6 @@ $(document).ready(function() {
   view = new View();
 
   $(document).on('keyup', function(event) {
-    $('#preview').text(transform($('#input').val()));
+    $('#preview').html(transform($('#input').val()));
   });
 });
