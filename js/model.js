@@ -27,7 +27,7 @@ Model.prototype.convertItalicsAsterisk = function(textArray) {
 Model.prototype.convertItalicsUnderscore = function(textArray) {
   var indexesOfUnderscores = [];
   for (var i = 0; i < textArray.length; i++) {
-    if (textArray[i] === '_' && textArray[i+1] != '_' && textArray[i-1] != '_')
+    if (textArray[i] === '_')
       indexesOfUnderscores.push(i);
   }
   for (var i = 0; i < indexesOfUnderscores.length; i++) {
