@@ -3,7 +3,5 @@ $(document).ready(function() {
   model = new Model();
   view = new View();
 
-  $(document).on('keyup', function(event) {
-      controller.transform();
-    })
+  $("#input").on('keyup', controller.transform);
 });
