@@ -1,13 +1,11 @@
-function Model(document) {
+function Model() {
 }
 
 Model.prototype.convertToMarkdown = function(plaintext) {
-  // console.log(plaintext);
   result = this.convertItalicsAsterisk(plaintext.split(""));
   result = this.convertItalicsUnderscore(result);
   result = this.convertBoldAsterisks(result);
   result = this.convertNewlines(result);
-  // console.log(result.join(""));
   return result.join("");
 }
 
@@ -24,7 +22,7 @@ Model.prototype.convertItalicsAsterisk = function(textArray) {
       textArray[indexesOfAsterisks[i]] = "</i>";
     }
   }
-  return textArray
+  return textArray;
 }
 
 Model.prototype.convertItalicsUnderscore = function(textArray) {
@@ -40,7 +38,7 @@ Model.prototype.convertItalicsUnderscore = function(textArray) {
       textArray[indexesOfUnderscores[i]] = "</i>";
     }
   }
-  return textArray
+  return textArray;
 }
 
 Model.prototype.convertBoldAsterisks = function(textArray) {
@@ -56,18 +54,18 @@ Model.prototype.convertBoldAsterisks = function(textArray) {
       textArray[indexesOfDoubleAsterisks[i]] = "</strong>";
     }
   }
-  textArray = this.clearCharacter("*", textArray)
-  return textArray
+  textArray = this.clearCharacter("*", textArray);
+  return textArray;
 }
 
 Model.prototype.clearCharacter = function(character, array) {
   for (var i = 0; i < array.length; i++) {
     if (array[i] === character) {
-      array.splice(i, 1)
-      i--
+      array.splice(i, 1);
+      i--;
     }
   }
-  return array
+  return array;
 }
 
 Model.prototype.convertNewlines = function(textArray) {
@@ -75,5 +73,5 @@ Model.prototype.convertNewlines = function(textArray) {
     if (textArray[i] === '\n')
       textArray[i] = '<br>';
   }
-  return textArray
+  return textArray;
 }
