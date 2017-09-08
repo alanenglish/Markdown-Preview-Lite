@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="css/application.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="js/model.js"></script>
@@ -10,13 +11,18 @@
   <title>Markdown Previewer Lite</title>
 </head>
 <body>
-  <div class='user-input'>
-    <h2>Type below:</h2>
-    <textarea id='input' rows='6' cols='60'></textarea>
-  </div>
-  <div class='output'>
-    <h2>Markdown Preview:</h2>
-    <div id='preview'></div>
+  <header>
+    <h1>Markdown Previewer Lite</h1>
+  </header>
+  <div class='container'>
+    <div class='user-input main-box'>
+      <h2>Type Below</h2>
+      <textarea id='input'></textarea>
+    </div>
+    <div class='output main-box'>
+      <h2>Markdown Preview </h2>
+      <div id='preview'></div>
+    </div>
   </div>
 </body>
 </html>
