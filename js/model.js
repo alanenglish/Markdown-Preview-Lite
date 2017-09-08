@@ -2,9 +2,12 @@ function Model(document) {
 }
 
 Model.prototype.convertToMarkdown = function(plaintext) {
+  // console.log(plaintext);
   result = this.convertItalicsAsterisk(plaintext.split(""));
   result = this.convertItalicsUnderscore(result);
   result = this.convertBoldAsterisks(result);
+  result = this.convertNewlines(result);
+  // console.log(result.join(""));
   return result.join("");
 }
 
@@ -65,4 +68,12 @@ Model.prototype.clearCharacter = function(character, array) {
     }
   }
   return array
+}
+
+Model.prototype.convertNewlines = function(textArray) {
+  for (var i = 0; i < textArray.length; i++) {
+    if (textArray[i] === '\n')
+      textArray[i] = '<br>';
+  }
+  return textArray
 }
